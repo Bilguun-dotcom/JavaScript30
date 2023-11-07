@@ -59,7 +59,31 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-
+const keyNumMap = new Map(
+    [
+      ['a', 65],
+      ['s', 83],
+      ['d', 68],
+      ['f', 70],
+      ['g', 71],
+      ['h', 72],
+      ['j', 74],
+      ['k', 75],
+      ['l', 76]
+    ]
+  );
+document.addEventListener('keydown', (event) => {
+  const name = event.key;
+  const label = document.querySelector(`div[data-key="${keyNumMap.get(name)}"]`)
+  const sound = document.querySelector(`audio[data-key="${keyNumMap.get(name)}"]`)
+  sound.play()
+  document.querySelector
+  label.classList.add("playing")
+  setTimeout(()=>{
+    label.classList.remove("playing")
+  }, 100)
+  }
+)
 </script>
 
 
